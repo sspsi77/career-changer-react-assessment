@@ -1,3 +1,10 @@
+import React from 'react';
+import Layout from "./Layout";
+import './Style.css';
+import { useState } from "react";
+import Admin from './Admin';
+import User from './User';
+
 const mockEmployees = [
   {
     id: 0,
@@ -20,14 +27,75 @@ const mockEmployees = [
 ]
 
 const Home = () => {
+  
+  const [sector, setSector] = useState("")
+  
+  const handleClick = (value) => {
+    setSector(value)
+  };
 
-  return (
-    <div>
+  const [newEmployee, setNewEmployee] = useState({});
 
-    </div>
-  )
+  const handleChange = (event) => {
+    const name = event.target.name;
+    const value = event.target.value;
+    setNewEmployee((prev) => ({
+      ...prev,
+      [name]: value
+    }));
+  };
+
+  const [employees, setEmployees] = useState(mockEmployees);
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    setEmployees((prev) => {
+      return [...prev, newEmployee];
+    });
+    setNewEmployee({});
+  };
+
+  const handleDelete = (removeIndex) => {
+    setEmployees((prev) => {
+      return prev.filter((employee, index) => index !== removeIndex);
+    });
+  };
+
+  if(sector === "admin") {
+    return (
+      <Layout>
+        <Admin 
+          onClick={handleClick} 
+          newEmployee={newEmployee}
+          employees={employees} 
+          onChange={handleChange}
+          onSubmit={handleSubmit}
+          onDelete={handleDelete}
+        />
+      </Layout>
+    );
+  } else if(sector === "user") {
+    return (
+      <Layout>
+        <User 
+          onClick={handleClick} 
+          employees={employees}
+        />
+      </Layout>
+    );
+  } else {
+    return (
+      <Layout>
+        <div className="home"> 
+          <h1>Generation Thailand React - Assessment</h1>
+          <div>
+              <button onClick={() => handleClick("user")}>User Home Sector</button>
+              <button onClick={() => handleClick("admin")}>Admin Home Sector</button>
+          </div>
+        </div>
+      </Layout>
+    )
+  } 
 }
-
-
 
 export default Home

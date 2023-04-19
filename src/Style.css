@@ -1,0 +1,124 @@
+/* All */
+*{
+    box-sizing:border-box;
+}
+button {
+    background: #806cff;
+    border: solid 1px #966cff;
+    background: linear-gradient(180deg, #ae6cff 0%, #682e9f 35%, #320a53 100%);
+    border-radius: 8px;
+    color: white;
+    padding: .75rem 1.5rem;
+    margin-right: 50px;
+}
+
+input{
+    width: 100%;
+    padding: 12px 20px;
+    margin-right: 8px;
+    box-sizing: border-box;
+    border-radius: 4px;
+    border: 1px solid gray;
+}
+
+
+  th {
+    background-color: #faf2ff;
+  }
+  table, td, th {
+    border: 1px solid gray; 
+    padding: 15px;
+    text-align: center;
+  }
+  
+  table {
+    border-collapse: collapse;
+    width: 80%;
+    
+  }
+/* Navbar */
+
+ul{
+    display: flex;
+    align-items:center;
+    justify-content: flex-end;
+    max-width: 100%;
+    height: 100px;
+    margin: 10px;
+    padding: 10px;
+    font-size: 20px;
+    border-bottom: 1px solid #d7d7d7;
+    list-style-type: none;
+}
+li{
+    margin: 10px;
+    padding: 10px;
+}
+a{
+    text-decoration: none;
+}
+
+/* Owner */
+
+.owner h1,h2 {
+    margin: 15px;
+    font-size: 2.0rem;
+    letter-spacing: 1px;
+}
+.owner p {
+    text-align: center;
+    font-size: 1.2rem;
+    letter-spacing: 1.5px;
+    margin: 30px;
+    
+   
+}
+.owner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+
+/* User */
+.user {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.user_table{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 40px;
+  }
+
+/* Home */
+.home {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Admin */
+.admin {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.admin_input{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    margin: 0px 20px;
+}
+
+  .admin_table{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 40px;
+  }
